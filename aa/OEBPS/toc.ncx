@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE ncx PUBLIC "-//NISO//DTD ncx 2005-1//EN"
+ "http://www.daisy.org/z3986/2005/ncx-2005-1.dtd">
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+  <head>
+    <meta content="urn:uuid:46b0abe6-10b6-450d-a4dd-90c478dfa402" name="dtb:uid"/>
+    <meta content="1" name="dtb:depth"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>继母的拖油瓶是我的前女友~昔日的恋情无从终结~</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="navPoint-1" playOrder="1">
+      <navLabel>
+        <text>继母的拖油瓶是我的前女友~昔日的恋情无从终结~</text>
+      </navLabel>
+      <content src="Text/Section0001.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-2" playOrder="2">
+      <navLabel>
+        <text>彩页</text>
+      </navLabel>
+      <content src="Text/Section0002.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-3" playOrder="3">
+      <navLabel>
+        <text>第一章-- 前情侣抗拒称呼「我讨厌的就是你这样的地方啊」</text>
+      </navLabel>
+      <content src="Text/Section0003.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-4" playOrder="4">
+      <navLabel>
+        <text>第二章-- 前情侣留守在家「这里可是我家，有什么奇怪的么？」</text>
+      </navLabel>
+      <content src="Text/Section0004.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-5" playOrder="5">
+      <navLabel>
+        <text>第三章-- 前情侣升入高中「寂寞了吗？」</text>
+      </navLabel>
+      <content src="Text/Section0005.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-6" playOrder="6">
+      <navLabel>
+        <text>第四章-- 前情侣进行体检「……有汗水的味道」</text>
+      </navLabel>
+      <content src="Text/Section0006.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-7" playOrder="7">
+      <navLabel>
+        <text>第五章-- 前男友看护病人「小菜一碟。」</text>
+      </navLabel>
+      <content src="Text/Section0007.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-8" playOrder="8">
+      <navLabel>
+        <text>第六章-- 长眠的前女友候汝入梦。「我刚才，到底做了什么……！？」</text>
+      </navLabel>
+      <content src="Text/Section0008.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-9" playOrder="9">
+      <navLabel>
+        <text>第七章上-- 前情侣进行约会 &lt;前&gt;「请以结婚为前提和我交往。」</text>
+      </navLabel>
+      <content src="Text/Section0009.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-10" playOrder="10">
+      <navLabel>
+        <text>第七章下-- 前情侣进行约会&lt;后&gt;「死推理狂。」「死宅男。」</text>
+      </navLabel>
+      <content src="Text/Section0010.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-11" playOrder="11">
+      <navLabel>
+        <text>第八章-- 前情侣互赠礼物。「……好想死……」</text>
+      </navLabel>
+      <content src="Text/Section0011.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-12" playOrder="12">
+      <navLabel>
+        <text>作为后记的替代而写的每章自评</text>
+      </navLabel>
+      <content src="Text/Section0012.xhtml"/>
+    </navPoint>
+  </navMap>
+</ncx>
