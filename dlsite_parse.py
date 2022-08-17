@@ -3,8 +3,9 @@ import sqlite3
 import requests
 from lxml import etree
 import re
+import os
 
-
+con = ""
 def parse_rj_title_cv(rj_num):
     url = 'https://www.dlsite.com/maniax/work/=/product_id/RJ%s.html' % (rj_num)
 
@@ -19,15 +20,66 @@ def parse_rj_title_cv(rj_num):
     # items = html.xpath('//a/text()')
     print(cv_name, title)
 
+def parse_rj_title_cv_test(rj_num):
+    if rj_num == "213123":
+        return ["cv1"], "name1"
+    elif rj_num == "1234214":
+        return ["cv2", "cv21"], "name2"
+    elif rj_num == "21312312":
+        return ["cv3", "cv4"], "name3"
+
+
 # print(re.findall("\d{2,}", "RJ305514-バブバブの森_彼女のお姉ちゃんは赤ちゃん言葉で浮気誘惑mp3"))
-def db_test():
-    con = sqlite3.connect('mydatabase.db')
+# def db_test():
+#     con = sqlite3.connect('./db/dl_site.db')
+#
+#     cur = con.cursor()
+#
+#     res = cur.execute("select * from t_voice").fetchall()
+#
+#     print(res)
+#
+#     con.close()
 
-    cursorObj = con.cursor()
+def get_rj_dir_name(rj_num):
+    cur = con.cursor()
+    res = cur.execute("select * from t_voice where rj_num = '%s'" % rj_num).fetchall()
+    cv = None
+    title = None
+    if len(res) < 1:
+        cv, title = parse_rj_title_cv_test(rj_num)
+        cv = '、'.join(cv)
+        sql = "insert into t_voice(title, rj_num, cv) Values ('%s', '%s', '%s')" % (title, rj_num, cv)
+        cur.execute(sql)
+        con.commit()
+    else:
+        cv = res[0][3]
+        title = res[0][1]
+    if cv is not None and title is not None:
+        return '''RJ%s-%s-%s''' % (rj_num, title, cv)
+    else:
+        return "error"
+    pass
 
-    con.close()
+def work():
+    top_dir = "/Users/xuzixiang/linshi/voice"
+    for dir in os.listdir(top_dir):
+        if dir == ".DS_Store":
+            continue
+        if dir.find("-") > 0:
+            continue
+        rj_num = re.findall("\d{2,}", dir)
+        if len(rj_num) < 1:
+            continue
+        new_name = get_rj_dir_name(rj_num[0])
+        if new_name == "error":
+            continue
+        os.rename(top_dir+'/'+dir, top_dir+'/'+new_name)
+        break
 
 
 if __name__ == '__main__':
     # parse_rj_title_cv("394238")
-    db_test()
+    con = sqlite3.connect('./db/dl_site.db')
+    work()
+    con.close()
