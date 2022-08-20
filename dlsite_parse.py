@@ -18,7 +18,7 @@ def parse_rj_title_cv(rj_num):
     cv_name = html.xpath('//*[@id="work_outline"]//tr[3]/td/a/text()')
     title = html.xpath('//*[@id="work_name"]/text()')
     # items = html.xpath('//a/text()')
-    print(cv_name, title)
+    return cv_name, title
 
 def parse_rj_title_cv_test(rj_num):
     if rj_num == "213123":
@@ -47,8 +47,10 @@ def get_rj_dir_name(rj_num):
     cv = None
     title = None
     if len(res) < 1:
-        cv, title = parse_rj_title_cv_test(rj_num)
+        cv, title = parse_rj_title_cv(rj_num)
         cv = '、'.join(cv)
+        title = ''.join(title)
+
         sql = "insert into t_voice(title, rj_num, cv) Values ('%s', '%s', '%s')" % (title, rj_num, cv)
         cur.execute(sql)
         con.commit()
@@ -56,13 +58,15 @@ def get_rj_dir_name(rj_num):
         cv = res[0][3]
         title = res[0][1]
     if cv is not None and title is not None:
+        title = title.replace(":", "")
         return '''RJ%s-%s-%s''' % (rj_num, title, cv)
     else:
         return "error"
     pass
 
 def work():
-    top_dir = "/Users/xuzixiang/linshi/voice"
+    # top_dir = "/Users/xuzixiang/linshi/voice"
+    top_dir = "E:\\Voice"
     for dir in os.listdir(top_dir):
         if dir == ".DS_Store":
             continue
@@ -74,12 +78,13 @@ def work():
         new_name = get_rj_dir_name(rj_num[0])
         if new_name == "error":
             continue
-        os.rename(top_dir+'/'+dir, top_dir+'/'+new_name)
-        break
+        os.rename(top_dir+'\\'+dir, top_dir+'\\'+new_name)
+        # break
 
 
 if __name__ == '__main__':
     # parse_rj_title_cv("394238")
     con = sqlite3.connect('./db/dl_site.db')
     work()
+    # print(parse_rj_title_cv('305514'))
     con.close()
