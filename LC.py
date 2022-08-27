@@ -83,7 +83,4 @@ if __name__ == '__main__':
         title, question_id, java_code = get_question_data(questionTitleSlug)
         # print("package problem;\n" + java_code)
         write_to_file(title, question_id, java_code)
-    # write_to_file('','','')
-    # wf = open("./test.txt", 'w')
-    # wf.close()
-    # get_question_data("xu-lie-hua-er-cha-shu-lcof")
+

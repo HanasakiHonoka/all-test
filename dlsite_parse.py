@@ -31,7 +31,7 @@ def parse_rj_title_cv_test(rj_num):
 
 # print(re.findall("\d{2,}", "RJ305514-バブバブの森_彼女のお姉ちゃんは赤ちゃん言葉で浮気誘惑mp3"))
 # def db_test():
-#     con = sqlite3.connect('./db/dl_site.db')
+#     con = sqlite3.connect('./db/sql_lite.db')
 #
 #     cur = con.cursor()
 #
@@ -84,7 +84,7 @@ def work():
 
 if __name__ == '__main__':
     # parse_rj_title_cv("394238")
-    con = sqlite3.connect('./db/dl_site.db')
+    con = sqlite3.connect('db/sql_lite.db')
     work()
     # print(parse_rj_title_cv('305514'))
     con.close()
