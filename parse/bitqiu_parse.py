@@ -34,9 +34,9 @@ def build_from_json(data):
 
 def req(page, parent_id):
     cookies = {
-        'cloud_web_sid': 'b00efa74a291482194cf2113bec2c699',
+        'cloud_web_sid': '18699287d9d548b6bf7f48592a7fd51e',
         'cloud_web_uid': '110661697',
-        'cloud_web_in': 'b49a1f8a11bb464f807bc3054f34219c',
+        'cloud_web_in': 'd3864dfda12d421ab96b10bc3239ab7c',
     }
 
     headers = {
@@ -45,6 +45,7 @@ def req(page, parent_id):
         'Cache-Control': 'no-cache',
         'Connection': 'keep-alive',
         # Requests sorts cookies= alphabetically
+        # cloud_web_sid=18699287d9d548b6bf7f48592a7fd51e; cloud_web_uid=110661697; cloud_web_in=d3864dfda12d421ab96b10bc3239ab7c
         # 'Cookie': 'cloud_web_sid=b00efa74a291482194cf2113bec2c699; cloud_web_uid=110661697; cloud_web_in=b49a1f8a11bb464f807bc3054f34219c',
         'Origin': 'https://pan.bitqiu.com',
         'Pragma': 'no-cache',
@@ -175,7 +176,7 @@ def test():
     '''
     json_obj = json.loads(tbr_json.strip())
     tbr = build_from_json(tbr_json)
-    tbr.save()
+    print(tbr)
     pass
 
 
@@ -190,6 +191,7 @@ if __name__ == '__main__':
     # res_json = req(1, "f5ff0ea126c24b0ea20d7332bb88e9ca")
     # rr = res_json['data']['hasNext']
     # print(rr)
-    parse_dir_data("a3fcd57e985e4e718688e0ccc01b22aa", 1, True)
+    print(req(1, "a3fcd57e985e4e718688e0ccc01b22aa"))
+    # parse_dir_data("a3fcd57e985e4e718688e0ccc01b22aa", 1, True)
     # # print("`%s`" % "[MizudeppO] K_zuna AI's Virtual Sexgiving!.7z")
     # con.close()
